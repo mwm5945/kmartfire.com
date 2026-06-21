@@ -91,3 +91,9 @@ If you confirm a better start time, update `FIRE_START_ISO` in:
 - Add source citations and scanned primary documents
 - Add a map, photographs, or newspaper archive references
 - Add a short historical timeline once you have sourced details
+
+## Current content note
+
+The homepage currently emphasizes the scale of the fire using details summarized
+from Fire Engineering's historical archive article, "Not Enough Water, So Fire
+Guts 1.2-Million-Square-Foot Warehouse" (August 1, 1982).
