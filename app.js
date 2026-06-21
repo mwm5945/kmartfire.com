@@ -1,6 +1,12 @@
 const FIRE_START_ISO = "1982-06-21T12:00:00-04:00";
 const BURN_DELAY_MS = 30000;
 const BURN_TRANSITION_MS = 2800;
+const QUOTES = [
+  "\"i don't remember much about it. i wasn't there\" -- C. D.",
+  "\"It started at 6am\" -- K. S.",
+  "\"No, it started at noon\" -- T. S.",
+  "\"wait...it did?\" -- R. M."
+];
 
 function getElapsedParts(startDate, now) {
   const start = new Date(startDate);
@@ -69,7 +75,39 @@ function startBurnSequence() {
   }, BURN_DELAY_MS);
 }
 
+function startQuoteCarousel() {
+  const carousel = document.querySelector("[data-quote-carousel]");
+  const textNode = document.getElementById("quote-text");
+  const statusNode = document.getElementById("quote-status");
+  const prevButton = document.querySelector("[data-quote-prev]");
+  const nextButton = document.querySelector("[data-quote-next]");
+
+  if (!carousel || !textNode || !statusNode || !prevButton || !nextButton) {
+    return;
+  }
+
+  let index = 0;
+
+  function renderQuote() {
+    textNode.textContent = QUOTES[index];
+    statusNode.textContent = `${index + 1} / ${QUOTES.length}`;
+  }
+
+  prevButton.addEventListener("click", () => {
+    index = (index - 1 + QUOTES.length) % QUOTES.length;
+    renderQuote();
+  });
+
+  nextButton.addEventListener("click", () => {
+    index = (index + 1) % QUOTES.length;
+    renderQuote();
+  });
+
+  renderQuote();
+}
+
 renderCounter();
 window.setInterval(renderCounter, 1000);
+startQuoteCarousel();
 startFireStorm();
 startBurnSequence();
