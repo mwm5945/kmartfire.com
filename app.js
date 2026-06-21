@@ -35,28 +35,28 @@ function renderCounter() {
   }
 }
 
-function startFireTornado() {
-  const tornado = document.getElementById("fire-tornado");
-  if (!tornado) {
+function startFireStorm() {
+  const storm = document.getElementById("fire-storm");
+  if (!storm) {
     return;
   }
 
-  function moveTornado() {
+  function moveStorm() {
     if (document.body.classList.contains("page-burned")) {
       return;
     }
 
-    const maxX = Math.max(0, window.innerWidth - 160);
-    const maxY = Math.max(120, window.innerHeight - 260);
+    const maxX = Math.max(0, window.innerWidth - 340);
+    const maxY = Math.max(120, window.innerHeight - 250);
     const nextX = Math.random() * maxX;
     const nextY = 60 + Math.random() * Math.max(40, maxY - 60);
-    tornado.style.transform = `translate3d(${nextX}px, ${nextY}px, 0)`;
+    storm.style.transform = `translate3d(${nextX}px, ${nextY}px, 0)`;
 
-    const delay = 1800 + Math.random() * 2600;
-    window.setTimeout(moveTornado, delay);
+    const delay = 2200 + Math.random() * 2800;
+    window.setTimeout(moveStorm, delay);
   }
 
-  moveTornado();
+  moveStorm();
 }
 
 function startBurnSequence() {
@@ -71,5 +71,5 @@ function startBurnSequence() {
 
 renderCounter();
 window.setInterval(renderCounter, 1000);
-startFireTornado();
+startFireStorm();
 startBurnSequence();
