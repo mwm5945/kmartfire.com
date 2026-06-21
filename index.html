@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KMart Fire | June 21, 1982</title>
+    <meta
+      name="description"
+      content="A simple memorial and documentation site for the KMart warehouse fire of June 21, 1982."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <p class="eyebrow">Documenting June 21, 1982</p>
+        <h1>The KMart warehouse fire.</h1>
+        <p class="hero-copy">
+          This site is a simple public record for the event, with a permanent
+          timeline anchor and a live counter showing how long it has been since
+          the fire began.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="./counter/">Open the live counter</a>
+          <a class="button button-secondary" href="#project">About this site</a>
+        </div>
+      </section>
+
+      <section class="panel panel-highlight">
+        <div>
+          <p class="section-label">Time Since</p>
+          <div class="inline-counter" aria-live="polite">
+            <div class="inline-counter-item">
+              <span id="years">0</span>
+              <small>years</small>
+            </div>
+            <div class="inline-counter-item">
+              <span id="days">0</span>
+              <small>days</small>
+            </div>
+            <div class="inline-counter-item">
+              <span id="hours">0</span>
+              <small>hours</small>
+            </div>
+            <div class="inline-counter-item">
+              <span id="minutes">0</span>
+              <small>minutes</small>
+            </div>
+            <div class="inline-counter-item">
+              <span id="seconds">0</span>
+              <small>seconds</small>
+            </div>
+          </div>
+        </div>
+        <p class="counter-note">
+          Counter base time: <strong>June 21, 1982 at 12:00 AM Eastern</strong>.
+          You can change this in <code>app.js</code> if you have a better-sourced
+          start time.
+        </p>
+      </section>
+
+      <section class="content-grid" id="project">
+        <article class="panel">
+          <p class="section-label">Project Scope</p>
+          <h2>A focused historical landing page.</h2>
+          <p>
+            The current version is intentionally small: a homepage, a separate
+            counter page, and enough structure to expand later with sourced
+            details, archived media, or scanned documents.
+          </p>
+        </article>
+
+        <article class="panel">
+          <p class="section-label">Suggested Additions</p>
+          <h2>What to add next.</h2>
+          <ul class="plain-list">
+            <li>Newspaper clippings or photographs</li>
+            <li>A sourced timeline of response and aftermath</li>
+            <li>Maps, witness accounts, and official reports</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="panel">
+        <p class="section-label">Deployment Layout</p>
+        <h2>Main site and subdomain.</h2>
+        <p>
+          The homepage is designed for <code>kmartfire.com</code>. The counter
+          page also works at <code>/counter/</code>, and the same files can be
+          deployed in a second GitHub Pages repository for
+          <code>howlonghasitbeensincethe.kmartfire.com</code>.
+        </p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

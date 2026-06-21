@@ -1,0 +1,107 @@
+:root {
+  --bg-1: #140d0b;
+  --bg-2: #3a130f;
+  --glow: rgba(255, 116, 77, 0.35);
+  --card: rgba(255, 245, 239, 0.08);
+  --line: rgba(255, 245, 239, 0.14);
+  --text: #fff4ee;
+  --muted: rgba(255, 244, 238, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, var(--glow), transparent 30%),
+    linear-gradient(180deg, var(--bg-2), var(--bg-1));
+}
+
+.counter-shell {
+  width: min(1000px, calc(100% - 2rem));
+  padding: 3rem 1.25rem;
+  text-align: center;
+}
+
+.counter-kicker,
+.counter-subtitle,
+.counter-footnote {
+  color: var(--muted);
+}
+
+.counter-kicker {
+  margin: 0 0 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.counter-subtitle {
+  margin: 1rem auto 0;
+  font-size: 1.1rem;
+}
+
+.counter-board {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.counter-card {
+  padding: 1.5rem 1rem;
+  border-radius: 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.24);
+}
+
+.counter-card span {
+  display: block;
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+}
+
+.counter-card small {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.counter-footnote {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@media (max-width: 820px) {
+  .counter-board {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .counter-board {
+    grid-template-columns: 1fr;
+  }
+}

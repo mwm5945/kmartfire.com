@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How Long Has It Been Since The KMart Fire?</title>
+    <meta
+      name="description"
+      content="A live counter showing how long it has been since the KMart warehouse fire of June 21, 1982."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./counter.css" />
+  </head>
+  <body>
+    <main class="counter-shell">
+      <p class="counter-kicker">howlonghasitbeensincethe.kmartfire.com</p>
+      <h1>How long has it been since the KMart fire?</h1>
+      <p class="counter-subtitle">
+        Since June 21, 1982 at 12:00 AM Eastern.
+      </p>
+
+      <section class="counter-board" aria-live="polite">
+        <div class="counter-card">
+          <span id="years">0</span>
+          <small>years</small>
+        </div>
+        <div class="counter-card">
+          <span id="days">0</span>
+          <small>days</small>
+        </div>
+        <div class="counter-card">
+          <span id="hours">0</span>
+          <small>hours</small>
+        </div>
+        <div class="counter-card">
+          <span id="minutes">0</span>
+          <small>minutes</small>
+        </div>
+        <div class="counter-card">
+          <span id="seconds">0</span>
+          <small>seconds</small>
+        </div>
+      </section>
+
+      <p class="counter-footnote">
+        If you identify a better source for the exact start time, update
+        <code>FIRE_START_ISO</code> in <code>counter.js</code>.
+      </p>
+    </main>
+
+    <script src="./counter.js"></script>
+  </body>
+</html>
