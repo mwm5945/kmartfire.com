@@ -90,6 +90,12 @@ h1 {
   font-size: 0.95rem;
 }
 
+.counter-disclaimer {
+  max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
