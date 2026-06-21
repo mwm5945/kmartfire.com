@@ -78,7 +78,7 @@ Important: for GitHub Pages custom subdomains, the `CNAME` should point to `YOUR
 Right now both counters use:
 
 ```text
-1982-06-21T00:00:00-04:00
+1982-06-21T12:00:00-04:00
 ```
 
 If you confirm a better start time, update `FIRE_START_ISO` in:

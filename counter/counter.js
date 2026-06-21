@@ -1,4 +1,4 @@
-const FIRE_START_ISO = "1982-06-21T00:00:00-04:00";
+const FIRE_START_ISO = "1982-06-21T12:00:00-04:00";
 
 function getElapsedParts(startDate, now) {
   const start = new Date(startDate);
