@@ -17,12 +17,18 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="fire-tornado" id="fire-tornado" aria-hidden="true">
-      <div class="fire-tornado-core"></div>
-      <div class="fire-tornado-plume"></div>
+    <div class="fire-storm" id="fire-storm" aria-hidden="true">
+      <div class="fire-storm-flames"></div>
+      <div class="fire-storm-embers"></div>
+      <div class="fire-storm-smoke"></div>
     </div>
     <div class="burn-overlay" aria-hidden="true">
       <div class="burn-overlay-smoke"></div>
+    </div>
+    <div class="death-message" aria-hidden="true">
+      <p class="death-message-label">The trail ended here.</p>
+      <h2>you died</h2>
+      <p class="death-message-note">Refresh the page to return to the fire.</p>
     </div>
     <main class="page-shell">
       <section class="hero">
@@ -67,7 +73,7 @@
           </div>
         </div>
         <p class="counter-note">
-          Counter base time: <strong>June 21, 1982 at 12:00 AM Eastern</strong>.
+          Counter base time: <strong>June 21, 1982 at 12:00 PM Eastern</strong>.
           You can change this in <code>app.js</code> if you have a better-sourced
           start time.
         </p>
