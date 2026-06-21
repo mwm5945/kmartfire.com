@@ -297,6 +297,37 @@ h2 {
     transform 3.2s ease;
 }
 
+.death-message {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 1.8s ease,
+    letter-spacing 1.8s ease;
+}
+
+.death-message-label,
+.death-message-note {
+  margin: 0;
+  color: rgba(255, 241, 227, 0.72);
+}
+
+.death-message h2 {
+  margin: 0.35rem 0 0.75rem;
+  font-size: clamp(3.8rem, 10vw, 7.5rem);
+  text-transform: lowercase;
+  color: #fff4ec;
+  text-shadow:
+    0 0 18px rgba(255, 130, 66, 0.18),
+    0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
 body.page-burning .page-shell {
   opacity: 0.28;
   filter: blur(8px) saturate(0.5);
@@ -334,6 +365,11 @@ body.page-burned .burn-overlay {
 body.page-burned .burn-overlay-smoke {
   opacity: 1;
   transform: scale(1.28);
+}
+
+body.page-burned .death-message {
+  opacity: 1;
+  letter-spacing: 0.04em;
 }
 
 @keyframes tornado-flicker {
