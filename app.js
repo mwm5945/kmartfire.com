@@ -63,9 +63,10 @@ function startFireStorm() {
     const nextY = 60 + Math.random() * Math.max(40, maxY - 60);
     storm.style.transform = `translate3d(${nextX}px, ${nextY}px, 0)`;
 
-    const delay = 2200 + Math.random() * 2800;
+    const delay = 1200 + Math.random() * 1800;
     window.setTimeout(moveStorm, delay);
   }
+
 
   moveStorm();
 }

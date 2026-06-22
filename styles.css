@@ -53,15 +53,16 @@ body::before {
     transform 2.8s ease;
 }
 
-.top-banner {
-  margin-bottom: 1rem;
-  padding: 0.9rem 1.25rem;
-  border-radius: 999px;
-  background: rgba(124, 35, 22, 0.9);
-  color: #fff8f2;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
+ .top-banner {
+   margin: 0 auto 1rem;
+   padding: 0.9rem 1.25rem;
+   border-radius: 999px;
+   background: rgba(124, 35, 22, 0.9);
+   color: #fff8f2;
+   text-align: center;
+   box-shadow: var(--shadow);
+   width: fit-content;
+ }
 
 .top-banner p {
   margin: 0;
@@ -250,16 +251,18 @@ h2 {
   gap: 0.75rem;
 }
 
-.quote-button {
-  border: 1px solid var(--line);
-  background: rgba(255, 250, 243, 0.9);
-  color: var(--ink);
-  border-radius: 999px;
-  padding: 0.7rem 1rem;
-  font: inherit;
-  font-weight: 600;
-  cursor: pointer;
-}
+ .quote-button {
+   -webkit-appearance: none;
+   appearance: none;
+   border: 1px solid var(--line);
+   background: rgba(255, 250, 243, 0.9);
+   color: var(--ink);
+   border-radius: 999px;
+   padding: 0.7rem 1rem;
+   font: inherit;
+   font-weight: 600;
+   cursor: pointer;
+ }
 
 .quote-carousel-status {
   margin: 0;
@@ -282,15 +285,16 @@ h2 {
   margin: 0;
 }
 
-.photo-card img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  border-radius: 22px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-}
+ .photo-card img {
+   display: block;
+   width: 100%;
+   height: auto;
+   aspect-ratio: 16 / 10;
+   object-fit: cover;
+   border-radius: 22px;
+   border: 1px solid var(--line);
+   box-shadow: var(--shadow);
+ }
 
 .photo-card figcaption,
 .photo-credit {
