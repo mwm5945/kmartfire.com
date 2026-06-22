@@ -67,6 +67,7 @@ h1 {
   border-radius: 24px;
   background: var(--card);
   border: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.24);
 }
@@ -98,6 +99,12 @@ h1 {
 
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .counter-card {
+    background: rgba(255, 245, 239, 0.14);
+  }
 }
 
 @media (max-width: 820px) {
