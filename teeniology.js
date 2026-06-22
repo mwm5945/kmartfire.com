@@ -242,6 +242,26 @@ const TEENIOLOGY_STORAGE_KEY = "teeniology-enabled";
     return `${formatInteger(minute - 50)} past teenie till ${formatInteger(nextHour)}`;
   }
 
+  function replaceStandaloneScales(text) {
+    const scaleMapping = {
+      hundred: "teenie weenie",
+      thousand: "stinky winky",
+      million: "stunky wunky",
+    };
+
+    return text.replace(/\b(hundred|thousand|million)s?\b/gi, (match) => {
+      const word = match.toLowerCase().replace(/s$/, "");
+      const replacement = scaleMapping[word];
+      const isPlural = match.toLowerCase().endsWith("s");
+
+      if (!isPlural) return capitalizeReplacement(match, replacement);
+
+      const pluralReplacement =
+        replacement.replace(/y$/, "ies") || `${replacement}s`;
+      return capitalizeReplacement(match, pluralReplacement);
+    });
+  }
+
   function replaceTimes(text) {
     return text.replace(TIME_PATTERN, (match, hour, minute, meridiem, meridiemSuffix) => {
       const compact = match.replace(/\s+/g, "");
@@ -280,7 +300,15 @@ const TEENIOLOGY_STORAGE_KEY = "teeniology-enabled";
   }
 
   function formatText(text) {
-    return replaceNumericValues(replaceNumericOrdinals(replaceWordNumbers(replaceTimes(text))));
+    return replaceNumericValues(
+      replaceNumericOrdinals(
+        replaceWordNumbers(
+          replaceStandaloneScales(
+            replaceTimes(text)
+          )
+        )
+      )
+    );
   }
 
   function collectTextNodes(root) {
