@@ -1,4 +1,5 @@
 const FIRE_START_ISO = "1982-06-21T12:00:00-04:00";
+let teeniologyController;
 
 function getElapsedParts(startDate, now) {
   const start = new Date(startDate);
@@ -28,9 +29,20 @@ function renderCounter() {
   for (const [key, value] of Object.entries(parts)) {
     const node = document.getElementById(key);
     if (node) {
-      node.textContent = value.toLocaleString();
+      node.textContent = teeniologyController?.isEnabled()
+        ? teeniologyController.formatInteger(value)
+        : value.toLocaleString();
     }
   }
+}
+
+if (window.Teeniology) {
+  teeniologyController = window.Teeniology.createController({
+    toggleSelector: "#teeniology-toggle",
+    onToggle() {
+      renderCounter();
+    }
+  });
 }
 
 renderCounter();

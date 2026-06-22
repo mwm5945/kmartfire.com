@@ -18,6 +18,13 @@
   </head>
   <body>
     <main class="counter-shell">
+      <div class="teeniology-toggle-container" data-teenie-skip>
+        <label class="switch">
+          <input type="checkbox" id="teeniology-toggle" aria-label="Toggle Teeniology Mode" />
+          <span class="slider round"></span>
+        </label>
+        <span class="toggle-label">Teeniology Mode</span>
+      </div>
       <p class="counter-kicker">howlonghasitbeensincethe.kmartfire.com</p>
       <h1>How long has it been since the KMart fire?</h1>
       <p class="counter-subtitle">
@@ -26,23 +33,23 @@
 
       <section class="counter-board" aria-live="polite">
         <div class="counter-card">
-          <span id="years">0</span>
+          <span id="years" data-teenie-dynamic>0</span>
           <small>years</small>
         </div>
         <div class="counter-card">
-          <span id="days">0</span>
+          <span id="days" data-teenie-dynamic>0</span>
           <small>days</small>
         </div>
         <div class="counter-card">
-          <span id="hours">0</span>
+          <span id="hours" data-teenie-dynamic>0</span>
           <small>hours</small>
         </div>
         <div class="counter-card">
-          <span id="minutes">0</span>
+          <span id="minutes" data-teenie-dynamic>0</span>
           <small>minutes</small>
         </div>
         <div class="counter-card">
-          <span id="seconds">0</span>
+          <span id="seconds" data-teenie-dynamic>0</span>
           <small>seconds</small>
         </div>
       </section>
@@ -53,6 +60,7 @@
        </p>
     </main>
 
+    <script src="../teeniology.js"></script>
     <script src="./counter.js"></script>
   </body>
 </html>

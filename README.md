@@ -1,9 +1,10 @@
 # kmartfire.com
 
-Simple static GitHub Pages site for `kmartfire.com`, plus a standalone counter page that can also be deployed to `howlonghasitbeensincethe.kmartfire.com`.
+Simple static GitHub Pages site for `kmartfire.com`. 
 
 ## What's in this repo
 
+- A deeply unserious webpage about a very real fire that our fathers were at, and continually talk about.
 - `index.html`, `styles.css`, `app.js`: the main landing page
 - `counter/`: a self-contained counter page
 - `CNAME`: custom domain file for the main site

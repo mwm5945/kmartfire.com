@@ -582,3 +582,94 @@ code {
     grid-template-columns: 1fr;
   }
 }
+
+.teeniology-toggle-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 7;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 250, 243, 0.88);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.toggle-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  background: rgba(124, 35, 22, 0.2);
+  transition: background 180ms ease;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff8f2;
+  box-shadow: 0 6px 16px rgba(51, 25, 18, 0.24);
+  transition: transform 180ms ease;
+}
+
+.switch input:checked + .slider {
+  background: var(--accent);
+}
+
+.switch input:focus-visible + .slider {
+  outline: 2px solid rgba(181, 72, 47, 0.45);
+  outline-offset: 3px;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+body.page-burned .teeniology-toggle-container {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 860px) {
+  .teeniology-toggle-container {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .teeniology-toggle-container {
+    position: static;
+    width: fit-content;
+    margin: 1rem auto 0;
+  }
+}

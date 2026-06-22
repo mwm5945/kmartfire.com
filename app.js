@@ -1,6 +1,8 @@
 const FIRE_START_ISO = "1982-06-21T12:00:00-04:00";
 const BURN_DELAY_MS = 30000;
 const BURN_TRANSITION_MS = 2800;
+let teeniologyController;
+let refreshQuote = () => {};
 const QUOTES = [
   "\"i don't remember much about it. i wasn't there\" -- C. D.",
   "\"It started at 6am\" -- K. S.",
@@ -41,7 +43,9 @@ function renderCounter() {
   for (const [key, value] of Object.entries(parts)) {
     const node = document.getElementById(key);
     if (node) {
-      node.textContent = value.toLocaleString();
+      node.textContent = teeniologyController?.isEnabled()
+        ? teeniologyController.formatInteger(value)
+        : value.toLocaleString();
     }
   }
 }
@@ -95,9 +99,13 @@ function startQuoteCarousel() {
   let index = 0;
 
   function renderQuote() {
-    textNode.textContent = QUOTES[index];
+    textNode.textContent = teeniologyController?.isEnabled()
+      ? teeniologyController.formatText(QUOTES[index])
+      : QUOTES[index];
     statusNode.textContent = `${index + 1} / ${QUOTES.length}`;
   }
+
+  refreshQuote = renderQuote;
 
   prevButton.addEventListener("click", () => {
     index = (index - 1 + QUOTES.length) % QUOTES.length;
@@ -110,6 +118,16 @@ function startQuoteCarousel() {
   });
 
   renderQuote();
+}
+
+if (window.Teeniology) {
+  teeniologyController = window.Teeniology.createController({
+    toggleSelector: "#teeniology-toggle",
+    onToggle() {
+      renderCounter();
+      refreshQuote();
+    }
+  });
 }
 
 renderCounter();
