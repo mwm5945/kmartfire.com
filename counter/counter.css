@@ -24,6 +24,72 @@ body {
     linear-gradient(180deg, var(--bg-2), var(--bg-1));
 }
 
+.teeniology-toggle-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 auto 1.5rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 245, 239, 0.08);
+  border: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.toggle-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  background: rgba(255, 245, 239, 0.16);
+  transition: background 180ms ease;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff4ee;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 180ms ease;
+}
+
+.switch input:checked + .slider {
+  background: rgba(255, 116, 77, 0.85);
+}
+
+.switch input:focus-visible + .slider {
+  outline: 2px solid rgba(255, 244, 238, 0.55);
+  outline-offset: 3px;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
 .counter-shell {
   width: min(1000px, calc(100% - 2rem));
   padding: 3rem 1.25rem;

@@ -22,10 +22,17 @@
       <div class="fire-storm-embers"></div>
       <div class="fire-storm-smoke"></div>
     </div>
-    <div class="burn-overlay" aria-hidden="true">
-      <div class="burn-overlay-smoke"></div>
-    </div>
-    <div class="death-message" aria-hidden="true">
+     <div class="burn-overlay" aria-hidden="true">
+       <div class="burn-overlay-smoke"></div>
+     </div>
+     <div class="teeniology-toggle-container" data-teenie-skip>
+       <label class="switch">
+         <input type="checkbox" id="teeniology-toggle" aria-label="Toggle Teeniology Mode">
+         <span class="slider round"></span>
+       </label>
+       <span class="toggle-label">Teeniology Mode</span>
+     </div>
+     <div class="death-message" aria-hidden="true">
       <p class="death-message-label">The trail ended here.</p>
       <h2>you died</h2>
       <p class="death-message-note">Refresh the page to return to the fire.</p>
@@ -55,23 +62,23 @@
            <p class="section-label">Time Since</p>
            <div class="inline-counter" aria-live="polite">
              <div class="inline-counter-item">
-               <span id="years">0</span>
+               <span id="years" data-teenie-dynamic>0</span>
                <small>years</small>
              </div>
              <div class="inline-counter-item">
-               <span id="days">0</span>
+               <span id="days" data-teenie-dynamic>0</span>
                <small>days</small>
              </div>
              <div class="inline-counter-item">
-               <span id="hours">0</span>
+               <span id="hours" data-teenie-dynamic>0</span>
                <small>hours</small>
              </div>
              <div class="inline-counter-item">
-               <span id="minutes">0</span>
+               <span id="minutes" data-teenie-dynamic>0</span>
                <small>minutes</small>
              </div>
              <div class="inline-counter-item">
-               <span id="seconds">0</span>
+               <span id="seconds" data-teenie-dynamic>0</span>
                <small>seconds</small>
              </div>
            </div>
@@ -276,6 +283,7 @@
       </footer>
     </main>
 
+    <script src="./teeniology.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
