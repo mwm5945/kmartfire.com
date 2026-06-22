@@ -5,7 +5,12 @@ const QUOTES = [
   "\"i don't remember much about it. i wasn't there\" -- C. D.",
   "\"It started at 6am\" -- K. S.",
   "\"No, it started at noon\" -- T. S.",
-  "\"wait...it did?\" -- R. M."
+  "\"wait...it did?\" -- R. M.",
+  "\"We new a guy that worked there--I heard he disappeared\" -- Anonymous",
+  "\"No walls. No sprinkers. And a TNT section\" -- R. M.",
+  "\"There wasn't a fire tornado--there was a fire STORM\" -- K. S.",
+  "\"I nearly got sucked off the truck into the fire! It was windy!\" -- K. S.",
+  "\"I was not concieved on the same night as the Kmart Warehouse Fire\" -- C. D."
 ];
 
 function getElapsedParts(startDate, now) {
