@@ -603,7 +603,13 @@ code {
 .toggle-label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.toggle-label:hover {
+  color: var(--accent-deep);
 }
 
 .switch {
